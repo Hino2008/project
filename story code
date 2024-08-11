@@ -1,0 +1,175 @@
+import time
+import random
+
+chances = 1000
+success_rate = 1000
+
+def t(m):
+    print(m)
+    time.sleep(0.5)
+
+def continue_or_leave():
+    while True:
+        print("do you want to")
+        print("1. play again?")
+        print("2. leave?")
+        choice = input("enter your choice 1 or 2 ")
+        if choice == "1":
+            game()  
+        elif choice == "2":
+            print("thanks for playing")
+            exit()  
+        else:
+            print("invalid choice Please enter 1 or 2")
+
+def game():
+    global chances, success_rate
+    while True:
+        print("choose an option")
+        print("1. start game")
+        print("2. exit")
+        choice = input("enter your choice 1 or 2 ")
+        if choice == "1":
+            start()
+        elif choice == "2":
+            print("thanks for playing")
+            exit()
+        else:
+            print("invalid choice Please enter 1 or 2")
+
+def start():
+    global chances, success_rate
+    chances = 1000
+    success_rate = 1000
+
+    clan_head_names = ["madara", "itachi", "hashirama"]
+    clan_head = random.choice(clan_head_names)
+
+    t("you are the last surviving member of the noble shiranui clan")
+    t("massacred by a rival clan called ryu no ken on a stormy night")
+    t("your loyal butler hiroshi sacrificed himself to help you escape entrusting you with a hidden map and a family heirloom katana")
+    t("for four years you traveled the land training under master swordsmen and mastering your clan's forgotten arts")
+    t("now at 18 you have mastered the techniques but you dont have any fighting experience")
+    t("what are you gonna do now?")
+
+    while True:
+        print("choose an option:")
+        print("1. get more techniques and tactics")
+        print("2. participate in wars to get experience")
+
+        choice = input("enter your choice 1 or 2 ")
+        if choice == "1":
+            t("it has been 6 years and you have gained multiple tactics and techniques")
+            success_rate += 800  
+            print(f"success rate: {success_rate}")
+            print("now what do you do")
+            print("1. buy info")
+            print("2. attack them alone at night")
+            choice = input("enter your choice 1 or 2 ")
+            if choice == "1":
+                t("you have decided to buy info to have a better chance at killing the tyo clan")
+                t("the merchant asked for 3k coins which you gave him He then told you that the ryo clan security guards become drunk next sunday because the head of the clan leaves to attend a meeting and returns the next day")
+                success_rate += 300 
+
+                while True:  
+                    print("what will you do?")
+                    print("1. fight them when they are drunk")
+                    print("2. follow the clan head alone, then kill the guards")
+                    choice = input("enter 1 or 2 ")
+                    if choice == "1":
+                        t("you set the camp on fire and killed the guards")
+                        t("the next day " + clan_head + " the clan head returned and was shocked to see his mansion burned down and everyone dead")
+                        t("before he could even do or say anything")
+                        time.sleep(2)
+                        t("you killed him by stabbing him from behind")
+                        t("you avenged your clan")
+                        continue_or_leave()
+                    elif choice == "2":
+                        t("you followed him and when he reached a spacious area he stopped")
+                        t("he called you out and after recognizing you he attacked")
+                        time.sleep(2)
+                        success_rate += 200  
+                        t("you killed him with the first strike")
+                        t("you then returned and killed the rest of the guards avenging your clan")
+                        continue_or_leave()
+                    else:
+                        print("invalid choice please enter 1 or 2")
+            elif choice == "2":
+                t("as you were going to set the mansion on fire a guard called the rest and you got arrested")
+                t("the clan head beheaded you")
+                t("you lost")
+                continue_or_leave()
+            else:
+                print("invalid choice please enter 1 or 2")
+
+        elif choice == "2":
+            t("you have decided to participate in the war you were signing up when the general asked for your name")
+            print("1. make a new name")
+            print("2. join with your real name")  
+            choice = input("enter your choice 1 or 2 ")
+            if choice == "1":
+                t("you decided to make a new name")
+                name = input("what is your name? ")
+                t(f"the general nods in acknowledgment after 5 years of fierce battle you come out alive after winning the war you got better experience in killing and fighting and became a known swordsman")
+                chances += 2000  
+                print(f"your chanses are {chances}")
+            elif choice == "2":
+                t("you joined with your real name")
+                t("the general recognizes it and you get assigned as a squad leader")
+                t("you won the war but you weren't able to get a lot of experience as an individual because you were limited to fighting in specific spots and your teammates were assigned most of the fights")
+                chances += 1500 
+                print(f"your chances are {chances}")
+            else:
+                print("invalid choice please enter 1 or 2")
+
+            if chances >= 2500:
+                t("act 2: start of revenge")
+                t("you had watched the mansion for a month to know the security system of the clan")
+                t("you found out that the guards are slacking mostly on saturday, so you decided to sneak in a few days later")
+                t("as you were about to leave, you noticed 3 guards from the ryo clan beating up a boy who seems 15 at most in a dark alley")
+                t("what do you do?")
+                print("1. kill the 3 guards who didn't notice you and save the kid but that might make the ryo clan feel something is off and increase the security")
+                print("2. ignore the kid, avoiding raising the security")
+                choice = input("enter 1 or 2: ")
+                if choice == "1":
+                    chances += 1000 
+                    t("as the first guard was about to cut the kids arm, you slashed his head off swiftly as the other 2 were still processing the death of their friend and his head rolling on the floor you killed both of them saving the kid who is shocked and looking at you")
+                    t("you asked the kid what is his name")
+                    t("the kid: my name is sai")
+                    t("you: why were these guards attacking you?")
+                    t("sai: well, im a bastard son of a maid and the whole ryo clan hates me and hits me and my mother for that so im used to getting beaten")  #according to novels i read they are called bastards    
+                    t("sai: thanks for saving me but this way the ryo clan will kill you")
+                    t("you: don't worry about that i have already decided to kill them all")
+                    t("he looked shocked and asked: you will kill the ryo clan??")
+                    t("you: run you and your mother next saturday unless you want to die with that clan")
+                    t("as you were leaving sai stopped you")
+                    t("sai: attack from the 3rd entrance in 2 weeks on that day, the guards are drunk and the leader is away that entrance leads to the generals camp so its easier to kill them first")
+                    t("you give him 2k coins which can help him book a room in a hotel for a week with enough money to buy food")
+                    t("you: thanks for the info sai")
+                    t("(timeskip)")
+                    t("you found out later that if you had attacked on saturday you would have died because they had a secret meeting with another 6 clans which would mean your death")
+                    t("at 11 pm all the guards were drunk as the clan head had left and you sneaked into the generals camp, killing them first and you came out unscathed")
+                    t("you set the mansion on fire and killed all the guards")
+                    t("as you stared at the mansion set on fire you felt an overwhelming bloodthirst coming from behind you")
+                    t("as you turned around, you found yourself facing the clan head the one responsible for killing your clan")
+                    time.sleep(4)
+                    print(clan_head)
+                    if chances == 3500:
+                        print("after a fierce battle which continued until the sun rises you stared at the dead body of the clan head with 1 arm left and you didnt feel pain but felt calmer as you had taken revenge for your clan and after few seconeds you fell dead from the injuries but you had reached your goal and you can finally rest...forever")
+                    elif chances == 4000:
+                        print("after a fierce battle you looked at the sunrise drinking some alcohol which was left from the guards while sitting on the dead body of " + clan_head + " celebrating that you managed to avenge your clan")
+                    else:
+                        t("the battle was intense and you fought bravely but it wasnt enough " + clan_head + " was too powerful and despite your best efforts you fell in battle unable to avenge your clan")
+                        t("you lost")
+                    continue_or_leave()
+                elif choice == "2":
+                    t("you ignored the kid and on saturday when you went there as you sneaked into the clan you found yourself surrounded by 7 clan heads alongside the ryo clan head")
+                    t("they all attacked you and after fighting with all you had you died after killing 3 of them")
+                    t("you lost")
+                    continue_or_leave()
+                else:
+                    print("invalid choice please enter 1 or 2")
+        else:
+            print("invalid choice please enter 1 or 2")
+
+game()
